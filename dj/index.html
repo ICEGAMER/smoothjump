@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title> Smoothy Jump </title>
+        <style>
+            canvas {
+                border: 5px solid black;
+            }
+        </style>
+    </head>
+    <body>
+    <audio id="player" src="Burak_Yeter_ft._Danelle_Sandoval-Tuesday.mp3"></audio>
+<div>
+    <button onclick="document.getElementById('player').play()">olay</button>
+    <button onclick="document.getElementById('player').pause()">pause</button>
+    <button onclick="document.getElementById('player').volume+=0.1">volume +</button>
+    <button onclick="document.getElementById('player').volume-=0.1">volume -</button>
+    <button onclick="window.location.href='lvl2.html'">lvl2</button>
+</div> 
+        <canvas id="canvas" width="600" height="600">
+        </canvas>
+        <script src="main.js"></script>
+    </body>
+</html>
