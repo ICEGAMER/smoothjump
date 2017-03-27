@@ -30,3 +30,11 @@ brick = createBrick(500, -800, 100, 20);
 brickList.push(brick);
 brick = createBrick(200, -900, 100, 20);
 brickList.push(brick);
+var img3 = new Image();
+img3.src = 'terrain2.png';
+
+function drawTerrain ()
+{
+  var ctx3 = document.getElementById('canvas').getContext('2d');
+  ctx3.drawImage(img3, 0, 0, 600, 600);  
+}
