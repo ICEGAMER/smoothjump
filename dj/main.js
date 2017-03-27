@@ -5,6 +5,10 @@ var jumperColor = '#660033';;
 var jumperXSpeed = 3;
 var gravity = 9.8;
 
+var img = new Image();
+img.src = 'sprites.jpg';
+
+
 var brickList = [];
 var isGameOver = false;
 var jumper =
@@ -139,8 +143,8 @@ function clearCanvas()
 
 function drawJumper () 
 {
-  context.fillStyle = jumperColor;
-  context.fillRect(jumper.x, jumper.y, jumper.width, jumper.height);  
+  var ctx = document.getElementById('canvas').getContext('2d');
+  context.drawImage(img, jumper.x, jumper.y, jumper.width, jumper.height);  
 }
 
 function GotoMidGuys()
@@ -245,7 +249,7 @@ function jumperCollisions ()
 function levelComplete ()
 {
   isGameOver = true;
-  alert("Nice job level complete");
+  alert("Good job level complete");
 }
 
 function gameOver ()
