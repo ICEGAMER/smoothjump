@@ -8,6 +8,12 @@ var gravity = 9.8;
 var img = new Image();
 img.src = 'sprites.jpg';
 
+var img2 = new Image();
+img2.src = 'brick.png';
+
+var img3 = new Image();
+img3.src = 'terrain.png';
+
 
 var brickList = [];
 var isGameOver = false;
@@ -23,38 +29,7 @@ var jumper =
   speedY: 0
 }
 
-var brick = createBrick(100, 500, 100, 20);
-brickList.push(brick);
-brick = createBrick(200, 400, 100, 20);
-brickList.push(brick);
-brick = createBrick(100, 300, 100, 20);
-brickList.push(brick);
-brick = createBrick(200, 200, 100, 20);
-brickList.push(brick);
-brick = createBrick(100, 100, 100, 20);
-brickList.push(brick);
-brick = createBrick(200, 50, 100, 20);
-brickList.push(brick);
-brick = createBrick(100, 0, 100, 20);
-brickList.push(brick);
-brick = createBrick(200, -100, 100, 20);
-brickList.push(brick);
-brick = createBrick(100, -200, 100, 20);
-brickList.push(brick);
-brick = createBrick(700, -300, 100, 20);
-brickList.push(brick);
-brick = createBrick(500, -400, 100, 20);
-brickList.push(brick);
-brick = createBrick(900, -500, 100, 20);
-brickList.push(brick);
-brick = createBrick(200, -600, 100, 20);
-brickList.push(brick);
-brick = createBrick(700, -700, 100, 20);
-brickList.push(brick);
-brick = createBrick(400, -800, 100, 20);
-brickList.push(brick);
-brick = createBrick(900, -900, 100, 20);
-brickList.push(brick);
+
 
 
 registerKeyboard();
@@ -82,6 +57,7 @@ GotoMidGuys();
 function draw () 
 {
   clearCanvas();
+  drawTerrain();
   drawJumper();
   drawBricks();
   
@@ -91,8 +67,8 @@ function draw ()
 function drawBricks() {
   for (var i = 0; i < brickList.length; i++) {
     var brick = brickList[i];
-    context.fillStyle = "#3E983A";
-    context.fillRect(brick.x, brick.y, brick.width, brick.height);
+    var ctx2 = document.getElementById('canvas').getContext('2d');
+  ctx2.drawImage(img2, brick.x, brick.y, brick.width, brick.height); 
   }
 }
 
@@ -139,6 +115,12 @@ function getRandomCoordinate()
 function clearCanvas() 
 {
   context.clearRect(0, 0, 600, 600);
+}
+
+function drawTerrain ()
+{
+  var ctx3 = document.getElementById('canvas').getContext('2d');
+  ctx3.drawImage(img3, 0, 0, 600, 600);  
 }
 
 function drawJumper () 
