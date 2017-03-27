@@ -5,6 +5,15 @@ var jumperColor = '#660033';;
 var jumperXSpeed = 3;
 var gravity = 9.8;
 
+var lvlcpl = new Audio();
+lvlcpl.src = 'lvlcpl.mp3';
+
+var gameover = new Audio();
+gameover.src = 'Gameover.mp3'
+
+var jump = new Audio();
+jump.src = 'jump.wav';
+
 var img = new Image();
 img.src = 'sprites.jpg';
 
@@ -149,6 +158,7 @@ function registerKeyboard() {
     if(event.keyCode == 87)
     {
       if(!jumper.isJumped) {
+        jump.play();
         jumper.isJumped = true;
         jumper.speedY = -10;
       }
@@ -230,14 +240,16 @@ function jumperCollisions ()
 
 function levelComplete ()
 {
+  lvlcpl.play();
   isGameOver = true;
-  alert("Good job level complete");
+   setTimeout(function(){ alert("Good job level complete"); }, 2000);
 }
 
 function gameOver ()
 {
+  gameover.play();
   isGameOver = true;
-  alert("Game Over , pay to play");
+  setTimeout(function(){ alert("Game Over , pay to play"); }, 3000);
 }
 
 function checkBrickCollision(obj, col)
