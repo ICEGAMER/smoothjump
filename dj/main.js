@@ -227,7 +227,7 @@ function jumperCollisions ()
     levelComplete();
   }
 
-  if (jumper.y > canvas.width)
+  if (jumper.x > canvas.width)
   {
     jumper.x = 1;
   }
@@ -277,3 +277,4 @@ function checkBrickCollisions ()
   //   }
   // }
 }
+
