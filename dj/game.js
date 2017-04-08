@@ -65,8 +65,28 @@ function Initiate() {
   var platform = Bodies.rectangle(500, 600, 400, 30, {
     isStatic: true
   });
+  var platform1 = Bodies.rectangle(500, 400, 100, 20, {
+    isStatic: true
+  });
+  var platform2 = Bodies.rectangle(500, 400, 100, 20, {
+    isStatic: true
+  });
+  var platform3 = Bodies.rectangle(800, 200, 100, 20, {
+    isStatic: true
+  });
+  var platform4 = Bodies.rectangle(100, 100, 100, 20, {
+    isStatic: true
+  });
+  var platform5 = Bodies.rectangle(400, 50, 100, 20, {
+    isStatic: true
+  });
   
   World.add(world, platform);
+  World.add(world, platform1);
+  World.add(world, platform2);
+  World.add(world, platform3);
+  World.add(world, platform4);
+  World.add(world, platform5);
   
   // context for MatterTools.Demo
   return {
