@@ -1,15 +1,21 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-var jumperColor = '#660033';;
+var jumperColor = '#660033';
 var jumperXSpeed = 3;
 var gravity = 9.8;
+
+var Engine = Matter.Engine,
+    Render = Matter.Render,
+    World = Matter.World,
+    Bodies = Matter.Bodies;
+
 
 var lvlcpl = new Audio();
 lvlcpl.src = 'lvlcpl.mp3';
 
 var gameover = new Audio();
-gameover.src = 'Gameover.mp3'
+gameover.src = 'Gameover.mp3';
 
 var jump = new Audio();
 jump.src = 'jump.wav';
@@ -38,8 +44,24 @@ var jumper =
   speedY: 0
 }
 
+// create an engine
+var engine = Engine.create();
+
+// create a renderer
+var render = Render.create({
+  element: document.body,
+  engine: engine
+});
 
 
+// create a renderer
+var render = Render.create({
+  element: document.body,
+  engine: engine
+});
+function initiate() {
+  
+}
 
 registerKeyboard();
 
