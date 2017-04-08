@@ -227,7 +227,7 @@ function jumperCollisions ()
     levelComplete();
   }
 
-  if (jumper.x > canvas.width)
+  if (jumper.oldX > canvas.width)
   {
     jumper.x = 1;
   }
